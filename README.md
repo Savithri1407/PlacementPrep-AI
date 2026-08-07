@@ -68,3 +68,45 @@ LLM (Gemini / Ollama)
 Answer Generation
 ```
 
+## 🚀 Setup & Run
+
+1. Create and activate a virtual environment (Windows PowerShell):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+2. Create a `.env` file from `.env.example` and set your Gemini/Google API key (if using Gemini):
+
+```text
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
+
+3. Run the Streamlit app:
+
+```powershell
+.\.venv\Scripts\python -m streamlit run src/chat_ui.py
+```
+
+If you don't have a Gemini/Google API key, the app will still allow uploading and indexing documents, but answering via Gemini will be disabled until you provide the key.
+
+## 🧩 Backend API (optional React frontend)
+
+Start the FastAPI backend (recommended when using the React frontend):
+
+```powershell
+.venv\Scripts\python -m uvicorn src.api:app --reload --port 8000
+```
+
+The React frontend lives in `frontend/`. To run it locally:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend expects the backend at `http://localhost:8000` by default. Use `VITE_API_BASE` env var to change the API base.
+

@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from llm_rag import LLMRAGHandler
 from conversation import ConversationManager
 from pathlib import Path
