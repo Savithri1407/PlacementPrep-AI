@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+venv_broken/
+__pycache__/
+*.py[cod]
+.streamlit/secrets.toml
+uploads/
+vectorstore/faiss_index/
+vectorstore/local_index/
+*.faiss
+*.npy
